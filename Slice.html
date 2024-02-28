@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="name" placeholder="Enter your name"> <br><br>
+    <input type="submit" value="Click me !!" onclick="initialFunction()"> <br><br>
+    <span id="out"></span>
+
+<script>
+function initialFunction()
+{
+    const userInput=document.getElementById('name').value;
+    const words=userInput.split(' ');
+    var s='';
+    for(let i=0;i<words.length-1;i++)
+    {
+        s+=words[i].slice(0,1).toUpperCase()+". ";
+    }
+    s+=words[words.length-1].slice(0,1).toUpperCase()+words[words.length-1].slice(1);
+    document.getElementById('out').innerHTML="<strong>"+s+"</strong>";
+}
+</script>
+
+</body>
+
+
+
+</html>
