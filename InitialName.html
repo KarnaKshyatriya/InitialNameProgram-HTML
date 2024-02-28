@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+    <input type="text" id="userInput" placeholder="Please enter your full name"> <br><br><br>
+    <input type="submit" value="Click To Generate" onclick="driver()"><br><br><br>
+    <span id="output"></span>
+</center>
+
+
+<script>
+function splitSpace(sentence){
+    return sentence.split(' ');
+}
+function driver()
+{
+    const inputUser=document.getElementById('userInput').value;
+    var result='';
+const words=splitSpace(inputUser);
+
+for(let i=0;i<words.length-1;i++)
+{
+    result+=words[i].charAt(0).toUpperCase()+". ";
+}
+result+=words[words.length-1].charAt(0).toUpperCase()+words[words.length-1].slice(1);
+document.getElementById('output').innerHTML="<strong>"+result+"</strong>";
+}
+
+
+
+</script>
+
+
+</body>
+</html>
